@@ -12,21 +12,21 @@ pipeline {
         stage('Data Processing') {
             steps {
                 script {
-                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe model_preprocessing.py'
+                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe lab2\\model_preprocessing.py'
                 }
             }
         }
         stage('Train Model') {
             steps {
                 script {
-                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe model_preparation.py'
+                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe lab2\\model_preparation.py'
                 }
             }
         }
         stage('Evaluate Model') {
             steps {
                 script {
-                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe model_testing.py'
+                    bat 'C:\\Users\\User\\PycharmProjects\\MLOpsProject\\.venv\\Scripts\\python.exe lab2\\model_testing.py'
                 }
             }
         }
