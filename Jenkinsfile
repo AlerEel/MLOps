@@ -8,22 +8,22 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                bat 'pip3 install -r requirements.txt'
             }
         }
         stage('Data Processing') {
             steps {
-                sh 'python3 model_preprocessing.py'
+                bat 'python3 model_preprocessing.py'
             }
         }
         stage('Train Model') {
             steps {
-                sh 'python3 model_preparation.py'
+                bat 'python3 model_preparation.py'
             }
         }
         stage('Evaluate Model') {
             steps {
-                sh 'python3 model_testing.py'
+                bat 'python3 model_testing.py'
             }
         }
     }
