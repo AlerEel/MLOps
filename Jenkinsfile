@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                bat 'pip3 install -r requirements.txt'
+                bat 'python -m pip install -r requirements.txt''
             }
         }
         stage('Data Processing') {
