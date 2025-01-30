@@ -1,28 +1,33 @@
 pipeline {
     agent any
-    tools {
-        // Указываем имя Python, которое вы добавили в Global Tool Configuration
-        python "C:/Users/User/AppData/Local/Programs/Python/Python39/python.exe"
-    }
     stages {
-        stage('Checkout') {
+        stage('Install Dependencies') {
             steps {
-                git 'https://github.com/AlerEel/MLOps.git'
+                script {
+                    // Указываем полный путь к Python
+                    bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe -m pip install -r requirements.txt'
+                }
             }
         }
         stage('Data Processing') {
             steps {
-                bat 'python3 model_preprocessing.py'
+                script {
+                    bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe model_preprocessing.py'
+                }
             }
         }
         stage('Train Model') {
             steps {
-                bat 'python3 model_preparation.py'
+                script {
+                    bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe model_preparation.py'
+                }
             }
         }
         stage('Evaluate Model') {
             steps {
-                bat 'python3 model_testing.py'
+                script {
+                    bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe model_testing.py'
+                }
             }
         }
     }
