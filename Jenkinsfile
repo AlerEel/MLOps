@@ -6,11 +6,6 @@ pipeline {
                 git 'https://github.com/AlerEel/MLOps.git'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                bat 'python -m pip install -r requirements.txt'
-            }
-        }
         stage('Data Processing') {
             steps {
                 bat 'python3 model_preprocessing.py'
