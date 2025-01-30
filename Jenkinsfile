@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Указываем полный путь к Python
-                    bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe -m pip install -r requirements.txt'
-                }
-            }
-        }
+//         stage('Install Dependencies') {
+//             steps {
+//                 script {
+//                     // Указываем полный путь к Python
+//                     bat 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe -m pip install -r requirements.txt'
+//                 }
+//             }
+//         }
         stage('Data Processing') {
             steps {
                 script {
