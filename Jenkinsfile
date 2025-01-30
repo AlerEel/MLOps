@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        // Указываем имя Python, которое вы добавили в Global Tool Configuration
+        python "C:\Users\User\AppData\Local\Programs\Python\Python39\python.exe"
+    }
     stages {
         stage('Checkout') {
             steps {
